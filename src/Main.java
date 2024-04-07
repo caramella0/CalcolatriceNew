@@ -1,10 +1,10 @@
-import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
-        try (Scanner s = new Scanner(System.in)) {
+        Scanner s = new Scanner(System.in);
+        try  {
             float primoNumero;
             float secondoNumero;
             String sceltaOperatore;
@@ -54,9 +54,11 @@ public class Main {
                 }
             }
 
-        } catch (InputMismatchException e) {
+        } catch (NoSuchElementException w){
             System.out.println("inserire solo numeri!!");
+            s.nextLine();
             main(args);
+
         }
     }
 }
