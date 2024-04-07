@@ -4,13 +4,14 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        try  {
-            float primoNumero;
-            float secondoNumero;
+        try {
+            double primoNumero;
+            double secondoNumero;
             String sceltaOperatore;
+            double risultato;
 
             System.out.print("Primo numero da calcolare: ");
-            primoNumero = s.nextFloat();
+            primoNumero = s.nextDouble();
             System.out.print("Seleziona l'operatore: ");
             sceltaOperatore = s.next();
 
@@ -18,44 +19,48 @@ public class Main {
                 case "+" -> {
 
                     System.out.print("Secondo numero da calcolare: ");
-                    secondoNumero = s.nextFloat();
-                    System.out.println(primoNumero + secondoNumero);
+                    secondoNumero = s.nextDouble();
+                    risultato = primoNumero + secondoNumero;
+                    System.out.println("Risultato: " + risultato);
                     main(args);
                 }
                 case "-" -> {
 
                     System.out.print("Secondo numero da calcolare: ");
-                    secondoNumero = s.nextFloat();
-                    System.out.println(primoNumero - secondoNumero);
+                    secondoNumero = s.nextDouble();
+                    risultato = primoNumero - secondoNumero;
+                    System.out.println("Risultato: " + risultato);
                     main(args);
                 }
                 case "*" -> {
 
                     System.out.print("Secondo numero da calcolare: ");
-                    secondoNumero = s.nextFloat();
-                    System.out.println(primoNumero * secondoNumero);
+                    secondoNumero = s.nextDouble();
+                    risultato = primoNumero * secondoNumero;
+                    System.out.println("Risultato: " + risultato);
                     main(args);
                 }
                 case "/" -> {
 
                     System.out.print("Secondo numero da calcolare: ");
-                    secondoNumero = s.nextFloat();
+                    secondoNumero = s.nextDouble();
                     if (primoNumero == 0 || secondoNumero == 0) {
-                        System.out.println("numero non divisibbile per zero");
+                        System.out.println("Numero non divisibbile per zero");
                     } else {
-                        System.out.println(primoNumero / secondoNumero);
+                        risultato = primoNumero / secondoNumero;
+                        System.out.println("Risultato: " + risultato);
                     }
                     main(args);
                 }
                 default -> {
 
-                    System.out.println("operatore invalido");
+                    System.out.println("Attenzione operatore invalido");
                     main(args);
                 }
             }
 
-        } catch (NoSuchElementException w){
-            System.out.println("inserire solo numeri!!");
+        } catch (NoSuchElementException w) {
+            System.out.println("Attenzione inserire solo numeri!!");
             s.nextLine();
             main(args);
 
